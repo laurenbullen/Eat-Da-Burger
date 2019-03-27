@@ -1,0 +1,17 @@
+<h2>Undevoured Burgers!</h2>
+{{#each burgers}}
+{{#unless devoured}}
+<p>{{this.id}}: {{this.burger_name}}</p>
+{{/unless}}
+{{/each}}
+<h2>Devoured Burgers!</h2>
+{{#each burgers}}
+{{#if devoured}}
+{{this.id}}: {{this.burger_name}}
+{{/if}}
+{{/each}}
+<h2>Add a Burger</h2>
+<form action="/burgers/create" method="POST">
+    <input type="text" name="burger_name" value="">
+    <button type="submit">Submit</button>
+</form>
